@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    /* The default background color for your pages (white). */
+    --foreground: 222.2 47.4% 11.2%;
+    /* The default text color (dark slate blue). */
+
+    --card: 0 0% 100%;
+    /* The background color of cards. */
+    --card-foreground: 222.2 47.4% 11.2%;
+    /* The text color inside cards. */
+
+    --popover: 0 0% 100%;
+    /* The background of popovers and dropdowns. */
+    --popover-foreground: 222.2 47.4% 11.2%;
+    /* The text color inside popovers. */
+
+    --primary: 217.2 91.2% 59.8%;
+    /* Your main brand color (vibrant blue), used for primary buttons, links, and active elements. */
+    --primary-foreground: 210 40% 98%;
+    /* The text color on top of primary elements (light, almost white). */
+
+    --secondary: 210 40% 96.1%;
+    /* The background for secondary buttons and less important elements (light gray). */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* The text color on top of secondary elements. */
+
+    --muted: 210 40% 96.1%;
+    /* A subtle background color, often for badges or separators (light gray). */
+    --muted-foreground: 215.4 16.3% 46.9%;
+    /* The text color for less important, muted text. */
+
+    --accent: 210 40% 96.1%;
+    /* A color for hovered or active items, like a selected item in a dropdown (light gray). */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    /* The text color on top of accent elements. */
+
+    --destructive: 0 84.2% 60.2%;
+    /* The color for destructive actions, like delete buttons (red). */
+    --destructive-foreground: 210 40% 98%;
+    /* The text color on top of destructive elements. */
+
+    --border: 214.3 31.8% 91.4%;
+    /* The color for borders on components like cards and inputs. */
+    --input: 214.3 31.8% 91.4%;
+    /* The border color specifically for input fields. */
+    --ring: 217.2 91.2% 59.8%;
+    /* The color of the focus ring that appears when you tab to an element (matches primary blue). */
+
+    --radius: 0.5rem;
+    /* The default border radius for components like buttons and cards. */
+  }
+
+
+  .dark {
+
+    --background: 240 6% 10%;
+    /* A very dark gray, almost black */
+
+    /* The default background for dark mode pages (very dark blue). */
+    --foreground: 210 40% 98%;
+    /* The default text color for dark mode (light gray). */
+
+    --card: 240 5% 12%;
+    /* The background of cards in dark mode. */
+    --card-foreground: 210 40% 98%;
+    /* The text color inside cards in dark mode. */
+
+    --popover: 240 6% 10%;
+    /* The background of popovers in dark mode. */
+    --popover-foreground: 210 40% 98%;
+    /* The text color inside popovers in dark mode. */
+
+    --primary: 0 0% 100%;
+    /* The main brand color (vibrant blue), often kept the same in dark mode. */
+    --primary-foreground: 210 40% 98%;
+    /* The text color on primary buttons (light gray/white). */
+
+    --secondary: 217.2 91.2% 59.8%;
+    /* The background for secondary buttons in dark mode (a muted blue). */
+    --secondary-foreground: 0 0% 100%;
+    /* The text color on secondary buttons (white). */
+
+    --muted: 240 5% 15%;
+    /* A subtle background color for muted elements in dark mode. */
+    --muted-foreground: 215 20.2% 65.1%;
+    /* The text color for muted text in dark mode. */
+
+    --accent: 240 5% 15%;
+    /* The color for hovered or active items in dark mode. */
+    --accent-foreground: 210 40% 98%;
+    /* The text color on accent elements in dark mode. */
+
+    --destructive: 0 62.8% 30.6%;
+    /* The color for destructive actions in dark mode (a muted red). */
+    --destructive-foreground: 210 40% 98%;
+    /* The text color on destructive elements in dark mode. */
+
+    --border: 240 5% 15%;
+    /* The color for borders in dark mode. */
+    --input: 240 5% 15%;
+    /* The border color for inputs in dark mode. */
+    --ring: 217.2 91.2% 59.8%;
+    /* The color of the focus ring in dark mode. */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* --- YOUR CUSTOM STYLES --- */
+/* These will now automatically use the new blue theme! */
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.8));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary) / 0.6));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.main-background {
+  background-color: hsl(var(--background));
+  background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.1) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

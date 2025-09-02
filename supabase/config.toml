@@ -1,0 +1,16 @@
+# supabase/config.toml
+
+# This is your Project ID from your Supabase project's URL
+# e.g., "tsvzzrqhroluvldpeweb"
+project_id = "tsvzzrqhroluvldpeweb"
+
+[api]
+port = 54321
+# This is usually your default organization ID unless you've changed it
+# You can find it in your Supabase account settings
+
+[db]
+port = 54322
+
+[studio]
+port = 54323
